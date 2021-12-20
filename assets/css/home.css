@@ -1,0 +1,122 @@
+body{
+    background-color: #f0f2f5;
+}
+.container{
+    margin-top: 60px;
+    display: flex;
+}
+.component1,.component3{
+    width: 30vw;
+}
+.component2{
+    width: 40vw;
+    background-color: slateblue;
+}
+.item_component1{
+    width: 80%;
+    height: 40px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-decoration: none;
+    color: #4a4a4b;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.item_component1:hover{
+    color: #1881f4;
+}
+.item_component1 img{
+    height: 100%;
+    border-radius: 100%;
+    margin-right: 15px;
+
+}
+.item_component1 span{
+    width: 80%;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.component3_title{
+    text-align: center;
+    font-size: 20px;
+    color: #4a4a4b;
+}
+.item_component3{
+    float: right;
+    position: relative;
+}
+.online::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #31a24c;
+    left: 47px;
+    bottom: 3px;
+    border-radius: 100%;
+}
+.component3_title:hover{
+    color: #4a4a4b;
+}
+.component2_title{
+    margin-top: 10px;
+    width: 99%;
+    background-color: #fff;
+    height: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;    
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+.box_component2_img{
+    width: 20%;
+    height: 100%;
+    max-width: 50px;
+
+}
+.box_component2_img img{
+    height: 80%;
+    border-radius: 100%;
+    margin-top: 3px;
+}
+.component2_title input{
+    height: 80%;
+    border-radius: 20px;
+    background-color: #f0f2f5;
+    width: 80%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 20px;
+    text-overflow: ellipsis;
+}
+.component2_title input:focus-visible{
+    outline: none;
+}
+.component2_title input:hover{
+    cursor: pointer;
+}
+
+
+
+@media (max-width:800px){
+    .component1,.component3{
+        width: 0px;
+        display: none;
+    }
+    .component2{
+        width: 100vw;
+    }
+}
+@media (max-width:600px){
+    .container{
+        margin-top: 48px;
+    }
+}
