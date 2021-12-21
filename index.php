@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['signinOK'])) {
-    header('Location: home.php');
+    header('Location: ./home.php');
 }
 ?>
 
@@ -23,7 +23,7 @@ if (isset($_SESSION['signinOK'])) {
 
 <body>
     <?php
-    require 'partials/toast.php';
+    require './partials/toast.php';
     ?>
     <div class="container">
         <div class="box_main">
