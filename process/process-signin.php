@@ -2,7 +2,7 @@
     //Nếu đăng nhập rồi thì chuyển hướng về trang home
     session_start();
     if(isset($_SESSION['signinOK'])){
-        header('Location: home.php');
+        header('Location: ../home.php');
     }
     // Đăng nhập
     require 'connectDB.php';
