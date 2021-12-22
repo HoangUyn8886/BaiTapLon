@@ -8,7 +8,7 @@
     require 'connectDB.php';
     require '../send-email/sendEmail.php';
 
-    //Kiểm tra xem có email và password được gửi lên từ client không
+    //Kiểm tra xem có Email và Password được gửi lên từ client không
     if(isset($_POST['email']) && isset($_POST['password'])){
         $email = $_POST['email'];
         $password = $_POST['password'];
