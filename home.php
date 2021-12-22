@@ -38,7 +38,7 @@
         <div class="component2">
             <div class="component2_title">
                 <div class="box_component2_img">
-                    <img src="assets/img/avt_null.jpg" alt="avatar" srcset="assets/img/avt_null.jpg">
+                    <img src="assets/img/avt_null.jpg" alt="avatar" srcset="./assets/img/avt_null.jpg">
                 </div>
                 <input id="toogle_modal" type="text" placeholder="Hoàng Thị Thu Uyên ơi, bạn đang nghĩ gì thế?">
             </div>
@@ -53,13 +53,13 @@
             </a>
 
             <a href="user.php" class="item_component1 item_component3 online">
-                <img src="assets/img/avt_null.jpg" alt="avatar" srcset="assets/img/avt_null.jpg">
+                <img src="assets/img/avt_null.jpg" alt="avatar" srcset="./assets/img/avt_null.jpg">
                 <span>Hà Quang Tiến</span>
             </a>
 
 
             <a href="user.php" class="item_component1 item_component3 online">
-                <img src="assets/img/avt_null.jpg" alt="avatar" srcset="assets/img/avt_null.jpg">
+                <img src="assets/img/avt_null.jpg" alt="avatar" srcset="./assets/img/avt_null.jpg">
                 <span>Mei Mey</span>
             </a>
         </div>
