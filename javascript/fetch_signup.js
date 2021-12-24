@@ -17,7 +17,7 @@ form_signup.onsubmit = (e) => {
     // khi form đang gửi thì bật thẻ blocked để ngăn người dùng ấn phần tử khác
     blocked.style.display = 'block';
     let sex = '0';
-    //nếu check radio nam thì sex=1 , nữ thì sex=0
+    //nếu check radio = nam thì sex=1 , nữ thì sex=0
     if (radio_male.checked == true) {
         sex = '1';
     }
