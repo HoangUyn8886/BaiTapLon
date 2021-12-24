@@ -6,11 +6,18 @@ if (!isset($_SESSION['user_id'])) {
 include "./process/connectDB.php";
 $conn = connectDB();
 ?>
+<?php 
+$user_id = $_SESSION['user_id'];
+$sql_myself = "select * from user where user_id = '$user_id'";
+$result_myself = mysqli_query($conn, $sql_myself);
+$row_myself = mysqli_fetch_array($result_myself, MYSQLI_NUM);
+$avatar = $row_myself[6];
+$fullname = $row_myself[3];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 
-    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,10 +39,7 @@ $conn = connectDB();
     <div class="container">
 
         <div class="component1">
-            <?php $user_id = $_SESSION['user_id'];
-            $avatar = $_SESSION['avatar'];
-            $fullname = $_SESSION['fullname'];
-            ?>
+
             <a href="./user.php" class="item_component1">
                 <img id="avatar_main" <?php echo "src='$avatar'" ?> alt="avatar">
                 <span id="name_main"><?php echo $fullname; ?></span>
@@ -56,15 +60,21 @@ $conn = connectDB();
                 $sql_get_id_user_like = "select react.user_id from react where react.post_id = 
                 (select post.post_id from post where post.user_id = '$user_id')";
                 $result_get_id_user_like = mysqli_query($conn, $sql_get_id_user_like);
+                $count_id_user_like = mysqli_num_rows($result_get_id_user_like);
+                if ($count_id_user_like < 1) {
+                    echo "<h2> Không có ai :((( </h2>";
+                }
+                else{
                 while ($row_get_id_user_like = mysqli_fetch_array($result_get_id_user_like, MYSQLI_NUM)) {
 
 
                     //sql lấy ra những người đã like bài viết của bạn
-                    $sql_get_all_like_me = "select * from user where user_id = '$row_get_id_user_like[0]'"; 
+                    $sql_get_all_like_me = "select * from user where user_id = '$row_get_id_user_like[0]'";
                     $result_like_me = mysqli_query($conn, $sql_get_all_like_me);
+
                     $count_like_me = mysqli_num_rows($result_like_me);
-                    if($count_like_me>0){
-                    while($row_like_me = mysqli_fetch_array($result_like_me)){
+                    if ($count_like_me > 0) {
+                        while ($row_like_me = mysqli_fetch_array($result_like_me)) {
 
                 ?>
                             <a class="a_people" <?php echo "href='./user.php?user_id=$row_like_me[0]'" ?>>
@@ -76,10 +86,10 @@ $conn = connectDB();
                             </a>
 
                 <?php }
-                    }else{
-                        echo "<h1> Không có ai :((( </h1>";
+                    } else {
+                        echo "<h2> Không có ai :((( </h2>";
                     }
-                } ?>
+                }} ?>
             </div>
 
         </div>
