@@ -28,6 +28,7 @@ $fullname = $row_myself[3];
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/home.css">
     <link rel="stylesheet" href="./assets/css/friendly.css">
+    
 </head>
 
 <body>
