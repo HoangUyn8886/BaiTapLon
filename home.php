@@ -19,6 +19,7 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/home.css">
     <link rel="stylesheet" href="./assets/css/post.css">
+    
 </head>
 
 <body>
@@ -55,6 +56,7 @@ if (!isset($_SESSION['user_id'])) {
             include './process/connectDB.php';
             $conn = connectDB();
             $sql_get_all = 'select * from post';
+                         
             $result1 = mysqli_query($conn, $sql_get_all);
             while ($row_post = mysqli_fetch_array($result1, MYSQLI_NUM)) {
 
