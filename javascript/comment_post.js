@@ -11,7 +11,6 @@ submit_class.forEach((elm) => {
         formData.append('post_id', post_id);
         formData.append('user_id', user_id);
         formData.append('content_text', content_text);
-
         fetch('./process/process-comment.php', {
             method: "POST",
             body: formData
@@ -25,6 +24,7 @@ submit_class.forEach((elm) => {
                 <div class="name_and_time name_comment">
                     <a href="./user.php?user_id=${user_id}" class="fullname">${name_main}</a>
                     <div class="text_comment">${content_text}</div>
+                    
                 </div>
                      </div>
                  `);
