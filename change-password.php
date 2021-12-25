@@ -6,6 +6,7 @@ if (!isset($_SESSION['user_id'])) {
 ?>
 <?php
 include './process/connectDB.php';
+
 $conn = connectDB();
 $user_id = $_SESSION['user_id'];
 $sql_myself = "select * from user where user_id = '$user_id'";
@@ -36,6 +37,7 @@ $fullname = $row_myself[3];
         <div class="main">
             <a href="./index.php">
                 <img src="./assets/img/fb_logo.svg" alt="logo" srcset="">
+                
             </a>
             <form action="./process/process-change-password.php" method="post">
                 <label for="email"></label>
