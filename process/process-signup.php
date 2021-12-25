@@ -8,7 +8,7 @@ if (isset($_SESSION['signinOK'])) {
 include 'connectDB.php';
 include '../send-email/sendEmail.php';
 
-// Khi dang ky , trong db neu chua co email nay thi them vao voi status_auth = false 
+// Khi dang ky , trong database neu chua co email nay thi them vao voi status_auth = false 
 // gui email xac nhap nguoi dung , nguoi dung xac nhan thì status_auth = true
 $conn = connectDB();
 
