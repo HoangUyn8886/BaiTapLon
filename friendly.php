@@ -56,7 +56,7 @@ $fullname = $row_myself[3];
             <div class="people_like_main">
 
                 <?php
-                // lấy ra id của những người like bài viết
+                // lấy ra id của những người  đã like bài viết
                 $sql_get_id_user_like = "select react.user_id from react where react.post_id = 
                 (select post.post_id from post where post.user_id = '$user_id')";
                 $result_get_id_user_like = mysqli_query($conn, $sql_get_id_user_like);
