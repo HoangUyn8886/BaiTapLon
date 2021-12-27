@@ -82,6 +82,7 @@ $fullname = $row_myself[3];
 
             <?php
                 if (empty($_GET['user_id']) || $_GET['user_id'] == $user_id) {
+                    
                     echo "<div id='toogle_modal'>
                     Sửa thông tin
                     </div>";
