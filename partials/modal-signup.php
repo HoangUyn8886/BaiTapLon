@@ -28,6 +28,7 @@
                 <span class="radio_sex">
                     <label for="radio_male">Nữ</label>
                     <input type="radio" name="sex" id="radio_female">
+                    
                 </span>
 
             </div>
