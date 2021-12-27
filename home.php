@@ -49,6 +49,7 @@ $fullname = $row_myself[3];
             <div class="component2_title">
                 <div class="box_component2_img">
                     <img <?php echo "src='$avatar'" ?> alt="avatar">
+                    
                 </div>
                 <input id="toogle_modal" type="text" <?php echo "placeholder = '$fullname ơi, bạn đang nghĩ gì thế?'" ?>>
             </div>
