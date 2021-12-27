@@ -12,7 +12,7 @@
     if(isset($_POST['email']) && isset($_POST['password'])){
         $email = $_POST['email'];
         $password = $_POST['password'];
-        //Kết nốt tới cơ sở dữ liệu , tạo câu truy vấn tìm password của email được gửi lên
+        //Kết nốt tới cơ sở dữ liệu tạo câu truy vấn tìm password của email được gửi lên
         $conn = connectDB();       
         $sql = "select password from user where email = '$email'";
 
