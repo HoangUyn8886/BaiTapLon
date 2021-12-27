@@ -20,6 +20,7 @@ if($result==true){
 }
 else{
     header('Location: ../search.php');
+    
 }
 
 mysqli_close($conn);
