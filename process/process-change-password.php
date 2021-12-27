@@ -22,6 +22,7 @@ if($new_password == $new_password_2){
     }
 }
 else{
+    
     $_SESSION['message_password'] = 'Mật khẩu nhập không trùng nhau';
 }
 header('Location: ../change-password.php');
