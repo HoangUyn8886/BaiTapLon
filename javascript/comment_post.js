@@ -25,6 +25,7 @@ submit_class.forEach((elm) => {
                 <div class="name_and_time name_comment">
                     <a href="./user.php?user_id=${user_id}" class="fullname">${name_main}</a>
                     <div class="text_comment">${content_text}</div>
+                    
                 </div>
                      </div>
                  `);
