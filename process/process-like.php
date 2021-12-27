@@ -20,6 +20,7 @@ if($action=='like'){
         $count = countReact($conn,$post_id);
         $response = array('status'=>'like','count_like'=>$count);
         echo json_encode($response);
+        
     }
 }
 else{
