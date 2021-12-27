@@ -57,6 +57,7 @@ $fullname = $row_myself[3];
 
             <?php
             $result_get_user = mysqli_query($conn, $sql_get_user);
+            
             $count_result = mysqli_num_rows($result_get_user);
             if ($count_result > 0) {
                 $row_user = mysqli_fetch_array($result_get_user, MYSQLI_NUM);
