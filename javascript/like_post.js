@@ -20,6 +20,7 @@ btn_react.forEach(elm => {
                     elm.innerHTML = `<img id='like_${post_id}' class='liked_icon' alt='liked' src='./assets/img/liked.png'>`;
                 }
                 else {
+                    
                     elm.innerHTML = `<img id='unlike_${post_id}' alt='unliked' src='./assets/img/unlike.png'>`;
                 }
                 count_react.textContent = data.count_like;
