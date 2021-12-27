@@ -26,7 +26,7 @@
             if($result2){
                 $_SESSION['notify_signin'] = 'Kích hoạt thành công, mời bạn đăng nhập.';
                 //Điều hướng người dùng từ email về trang đăng nhập
-                header('Location: http://localhost:88/BaiTapLon_CNW');
+                header('Location: http://localhost/BaiTapLon_CNW');
             }
             else{
                 echo'Kich hoạt không thành công';
