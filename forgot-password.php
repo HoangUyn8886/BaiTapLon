@@ -26,6 +26,7 @@
                 <img src="./assets/img/fb_logo.svg" alt="logo" srcset="">
             </a>
             <form action="./process/process-forgot-password.php" method="post">
+                
                 <label for="email"></label>
                 <input type="text" name="email" id="email" autocomplete="off" placeholder="Nhập tài khoản email của bạn">
                 <?php if(isset($_SESSION['message_change_password'])){
