@@ -41,6 +41,7 @@ if (isset($_SESSION['signinOK'])) {
                             <?php
                             if (isset($_SESSION['notify_signin'])) {
                                 echo $_SESSION['notify_signin'];
+                                
                             }
                             ?></span>
                         <button type="submit">Đăng nhập</button>
