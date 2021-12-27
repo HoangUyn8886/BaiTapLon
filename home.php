@@ -13,6 +13,7 @@ $result_myself = mysqli_query($conn, $sql_myself);
 $row_myself = mysqli_fetch_array($result_myself, MYSQLI_NUM);
 $avatar = $row_myself[6];
 $fullname = $row_myself[3];
+
 ?>
 
 <!DOCTYPE html>
