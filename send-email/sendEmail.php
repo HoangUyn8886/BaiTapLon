@@ -14,15 +14,15 @@ try {
     $mail->isSMTP();// gửi mail SMTP
     $mail->Host = 'smtp.gmail.com';// Set the SMTP server to send through
     $mail->SMTPAuth = true;//Bật xác thực SMTP
-    $mail->Username = 'kaioco09@gmail.com';// SMTP username
+    $mail->Username = 'hoanguyen862001@gmail.com';// SMTP username
     $mail->Password = 'iycfatgdwgxnzjlh'; // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;// Bật mã hóa TLS; `PHPMailer :: ENCRYPTION_SMTPS` cũng được chấp nhận
     $mail->Port = 587; // TCP port to connect to
     $mail->CharSet = 'UTF-8';
     //Recipients
-    $mail->setFrom('kaioco09@gmail.com', 'Mạng xã hội Facebook');
+    $mail->setFrom('hoanguyen862001@gmail.com', 'Mạng xã hội Facebook');
 
-    $mail->addReplyTo('kaioco09@gmail.com', 'Mạng xã hội Facebook');
+    $mail->addReplyTo('hoanguyen862001@gmail.com', 'Mạng xã hội Facebook');
    
     
             $mail->addAddress($email); // Add a recipient

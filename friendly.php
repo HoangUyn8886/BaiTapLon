@@ -32,6 +32,7 @@ $fullname = $row_myself[3];
 </head>
 
 <body>
+    
     <?php
     include './partials/header.php';
     ?>
