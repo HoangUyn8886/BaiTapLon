@@ -45,6 +45,9 @@ $fullname = $row_myself[3];
                 <input style="margin-top: 10px;" type="password" name="new_password_2" id="email" autocomplete="off" placeholder="Nhập mật lại khẩu mới">
                 <?php if (isset($_SESSION['message_password'])) {
                     echo '<p style="width:100%;text-align:center;">' . $_SESSION['message_password'] . '</p>';
+    
+                <div>
+                    </div>
                 } ?>
                 <button type="submit">Đổi mật khẩu</button>
                 <a href="./home.php">Về trang chủ</a>
