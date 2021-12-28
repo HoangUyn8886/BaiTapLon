@@ -63,3 +63,4 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['fullnam
     echo json_encode($response);
 }
 mysqli_close($conn);
+?>

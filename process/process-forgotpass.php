@@ -43,3 +43,4 @@ if (isset($_POST['email'])) {
     $_SESSION['message_change_password'] = 'Chưa nhập email';
     header('Location: ../index.php');
 }
+?>
