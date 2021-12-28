@@ -6,7 +6,6 @@ if (!isset($_SESSION['user_id'])) {
 ?>
 <?php
 include './process/connectDB.php';
-
 $conn = connectDB();
 $user_id = $_SESSION['user_id'];
 $sql_myself = "select * from user where user_id = '$user_id'";
@@ -37,7 +36,6 @@ $fullname = $row_myself[3];
         <div class="main">
             <a href="./index.php">
                 <img src="./assets/img/fb_logo.svg" alt="logo" srcset="">
-                
             </a>
             <form action="./process/process-change-password.php" method="post">
                 <label for="email"></label>
@@ -45,9 +43,6 @@ $fullname = $row_myself[3];
                 <input style="margin-top: 10px;" type="password" name="new_password_2" id="email" autocomplete="off" placeholder="Nhập mật lại khẩu mới">
                 <?php if (isset($_SESSION['message_password'])) {
                     echo '<p style="width:100%;text-align:center;">' . $_SESSION['message_password'] . '</p>';
-    
-                <div>
-                    </div>
                 } ?>
                 <button type="submit">Đổi mật khẩu</button>
                 <a href="./home.php">Về trang chủ</a>
