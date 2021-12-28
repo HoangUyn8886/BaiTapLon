@@ -1,10 +1,10 @@
 <?php
-// session_start();
-// if (!isset($_SESSION['signinOK'])) {
-//     header('Location: ./index.php');
-// }
+ session_start();
+ if (!isset($_SESSION['signinOK'])) {
+    header('Location: ./index.php');
+ }
 ?>
-<!--  -->
+
 <!DOCTYPE html>
 <html lang="en">
 
