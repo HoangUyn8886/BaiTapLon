@@ -6,7 +6,7 @@ $post_id = $_POST['post_id'];
 $user_id = $_POST['user_id'];
 $action = $_POST['action'];
 
-//ham nay de lay so luong like cua 1 post
+//ham nay de lay so luong like cua mot post
 function countReact($conn,$post_id) {
     $sql_count_react_post = "select count(*) from react where post_id = '$post_id'";
     $result=mysqli_query($conn,$sql_count_react_post);
