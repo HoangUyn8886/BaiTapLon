@@ -28,6 +28,4 @@ header('Location: ../user.php');
 
 
 
-
-
 ?>
