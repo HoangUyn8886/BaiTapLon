@@ -1,4 +1,5 @@
 <?php
+//đưa về trang đăng nhập
     session_start();
     if(isset($_SESSION['signinOK'])){
         unset($_SESSION['signinOK']);
