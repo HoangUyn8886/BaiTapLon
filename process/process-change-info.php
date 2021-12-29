@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 include "./connectDB.php";
 include "./uploadImg.php";
 $conn = connectDB();
