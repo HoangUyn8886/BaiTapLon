@@ -15,6 +15,7 @@ if($new_password == $new_password_2){
     $sql_change_pass = "update user set password='$passwd_hash' where user_id='$user_id'";
     if(mysqli_query($conn, $sql_change_pass) == true){
         // tạo session gửi thông báo cho người dùng
+        
         $_SESSION['message_password'] = 'Thay đổi mật khẩu thành công';
     }
     else{
