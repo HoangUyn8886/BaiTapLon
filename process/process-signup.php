@@ -19,7 +19,6 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['fullnam
     $fullname = $_POST['fullname'];
     $birthday = $_POST['birthday'];
     $sex = $_POST['sex'];
-
     $sql = "select * from user where email = '$email'";
 
     $result = mysqli_query($conn, $sql);
