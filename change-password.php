@@ -27,7 +27,6 @@ $fullname = $row_myself[3];
     <link rel="stylesheet" href="./assets/css/forgot_password.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <title>Thay đổi mật khẩu</title>
-
 </head>
 
 <body>
