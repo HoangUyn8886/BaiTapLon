@@ -9,6 +9,7 @@ window.onload = () => {
     toogle_modal.onclick = () => {
         modal.style.display = 'flex';
     }
+    
     close_modal.onclick = (e) => {
         modal.style.display = 'none';
     }
