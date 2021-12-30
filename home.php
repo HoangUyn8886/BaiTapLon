@@ -23,6 +23,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
+    
     <?php
     include './partials/header.php';
     ?>
