@@ -110,6 +110,7 @@ $fullname = $row_myself[3];
                 $user_id_all = $row_all_user[0];
                 $user_fullname_all = $row_all_user[3];
                 $user_avatar_all = $row_all_user[6];
+                
 
             ?>
 
