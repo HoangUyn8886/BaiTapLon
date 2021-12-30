@@ -16,6 +16,7 @@
             <img src="./assets/img/fb_logo.svg" alt="logo" srcset="">
         </a>
     </div>
+    
     <div class="box3">
         <a class="box3_user" href='./user.php'>
             <img <?php echo "src='$avatar'"; ?> alt="">
