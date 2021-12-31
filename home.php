@@ -19,7 +19,6 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/home.css">
     <link rel="stylesheet" href="./assets/css/post.css">
-    
 </head>
 
 <body>
