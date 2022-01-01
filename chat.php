@@ -131,12 +131,11 @@ $fullname = $row_myself[3];
                     <?php
                     if (isset($chatwithid)) {
                         echo '<form id="form_mess" action="post" method="post">
-                            <input id="message" type="text" placeholder="chat..." class="input_chat"></input>
+                            <input autocomplete="off" id="message" type="text" placeholder="chat..." class="input_chat"></input>
                             <button id=sender_' . $user_id . ' class="user_sender" type="submit">Gửi</button>
                         </form>';
                     }
                     ?>
-
 
                 </div>
             </div>
