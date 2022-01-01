@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 include "./connectDB.php";
 include "./uploadImg.php";
 $conn = connectDB();
@@ -26,6 +25,8 @@ else{
     }
 }
 header('Location: ../user.php');
+
+
 
 
 

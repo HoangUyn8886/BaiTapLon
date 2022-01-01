@@ -4,6 +4,16 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: ./index.php');
 }
 ?>
+<?php
+include './process/connectDB.php';
+$conn = connectDB();
+$user_id = $_SESSION['user_id'];
+$sql_myself = "select * from user where user_id = '$user_id'";
+$result_myself = mysqli_query($conn, $sql_myself);
+$row_myself = mysqli_fetch_array($result_myself, MYSQLI_NUM);
+$avatar = $row_myself[6];
+$fullname = $row_myself[3];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,24 +32,21 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-    
     <?php
     include './partials/header.php';
     ?>
     <div class="container">
         <div class="component1">
-            <?php $user_id = $_SESSION['user_id'];
-            $avatar = $_SESSION['avatar'];
-            $fullname = $_SESSION['fullname'];
-            ?>
+
             <a href="./user.php" class="item_component1">
                 <img id="avatar_main" <?php echo "src='$avatar'" ?> alt="avatar">
-                <span id="name_main" ><?php echo $fullname; ?></span>
+                <span id="name_main"><?php echo $fullname; ?></span>
             </a>
-            <a href="./friendly.php" class="item_component1">
-                <img class="hobby_img" src="./assets/img/hobby.png" alt="hobby">
-                <span>Nguời quan tâm bạn</span>
+            <a href="./chat.php" class="item_component1">
+                <img class="hobby_img" src="./assets/img/chat.png" alt="chat">
+                <span>Chat</span>
             </a>
+            
         </div>
         <div class="component2">
             <div class="component2_title">
@@ -53,10 +60,8 @@ if (!isset($_SESSION['user_id'])) {
 
 
             <?php
-            include './process/connectDB.php';
-            $conn = connectDB();
+
             $sql_get_all = 'select * from post';
-                         
             $result1 = mysqli_query($conn, $sql_get_all);
             while ($row_post = mysqli_fetch_array($result1, MYSQLI_NUM)) {
 
@@ -74,7 +79,6 @@ if (!isset($_SESSION['user_id'])) {
                         <img <?php echo "src='$row_user[1]'"; ?> alt="avatar">
                         <div class="name_and_time">
                             <a <?php echo "href='./user.php?user_id=$row_user[0]'"; ?> class="fullname"><?php echo $row_user[0]; ?></a>
-                            
                             <div class="createAt"><?php echo $row_post[4] ?></div>
                         </div>
                     </div>
@@ -94,7 +98,7 @@ if (!isset($_SESSION['user_id'])) {
                         $result7 = mysqli_query($conn, $sql_count_react);
                         $count = mysqli_fetch_array($result7, MYSQLI_NUM)[0];
                         ?>
-                        <span <?php echo "id='count_react_$row_post[0]'" ?> ><?php echo "$count"; ?></span>
+                        <span <?php echo "id='count_react_$row_post[0]'" ?>><?php echo "$count"; ?></span>
                     </div>
                     <div class="action_post">
                         <div class="button_action btn_separate btn_react" <?php echo "id='react_$row_post[0]_$user_id'" ?>>
@@ -210,7 +214,7 @@ if (!isset($_SESSION['user_id'])) {
 
     <script src="./javascript/modal.js"></script>
     <script src="./javascript/library/autosize.min.js"></script>
-    <script >
+    <script>
         autosize(document.querySelectorAll('textarea'));
     </script>
     <script src="./javascript/upload_post.js"></script>

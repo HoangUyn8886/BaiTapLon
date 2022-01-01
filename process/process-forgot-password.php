@@ -1,12 +1,7 @@
 <?php
-//Nếu đăng nhập rồi thì chuyển hướng về trang home
-session_start();
-if (isset($_SESSION['signinOK'])) {
-    header('Location: ../home.php');
-}
 include './connectDB.php';
 include '../send-email/sendEmail.php';
-
+session_start();
 if (isset($_POST['email'])) {
     $email = $_POST['email'];
     $conn = connectDB();
@@ -43,4 +38,3 @@ if (isset($_POST['email'])) {
     $_SESSION['message_change_password'] = 'Chưa nhập email';
     header('Location: ../index.php');
 }
-?>

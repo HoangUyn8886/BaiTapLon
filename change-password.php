@@ -27,6 +27,7 @@ $fullname = $row_myself[3];
     <link rel="stylesheet" href="./assets/css/forgot_password.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <title>Thay đổi mật khẩu</title>
+
 </head>
 
 <body>
@@ -39,7 +40,7 @@ $fullname = $row_myself[3];
             <form action="./process/process-change-password.php" method="post">
                 <label for="email"></label>
                 <input type="password" name="new_password" id="email" autocomplete="off" placeholder="Nhập mật khẩu mới">
-                <input style="margin-top: 10px;" type="password" name="new_password_2" id="email" autocomplete="off" placeholder="Nhập mật lại khẩu mới">
+                <input style="margin-top: 10px;" type="password" name="new_password_2" id="email" autocomplete="off" placeholder="Nhập lại mật khẩu mới">
                 <?php if (isset($_SESSION['message_password'])) {
                     echo '<p style="width:100%;text-align:center;">' . $_SESSION['message_password'] . '</p>';
                 } ?>

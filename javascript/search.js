@@ -21,12 +21,10 @@ delete_all.onmouseout = () => {
     delete_all.style.backgroundColor = '#1877f2';
 }
 
-
 history_box.onmousemove = () => {
     if (a_people.length > 0) {
         a_people.forEach(e => {
             e.style.display = 'none';
-            
         })
     }
     delete_all.textContent = 'Xóa tất cả lịch sử';

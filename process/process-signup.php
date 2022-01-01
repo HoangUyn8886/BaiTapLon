@@ -1,11 +1,7 @@
 <?php
-//Nếu đăng nhập rồi thì chuyển hướng về trang home
 session_start();
-if (isset($_SESSION['signinOK'])) {
-    header('Location: ../home.php');
-}
 // Đăng ký tài khoản
-include 'connectDB.php';
+include './connectDB.php';
 include '../send-email/sendEmail.php';
 
 // Khi dang ky , trong db neu chua co email nay thi them vao voi status_auth = false 
@@ -19,6 +15,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['fullnam
     $fullname = $_POST['fullname'];
     $birthday = $_POST['birthday'];
     $sex = $_POST['sex'];
+
     $sql = "select * from user where email = '$email'";
 
     $result = mysqli_query($conn, $sql);
@@ -43,7 +40,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['fullnam
         // nếu $result2 thực hiện thành công thì gửi email kích hoạt cho client
         if ($result2 == true) {
             $title = '[Kích hoạt tài khoản]';
-            $bodyContent = "<a style='font-size:20px;' href='http://localhost:88/BaiTapLon_CNW/process/process-authentication.php/?email=$email&key_auth=$key_auth'>Click vào đây để xác nhận tài khoản $email của bạn</a>";
+            $bodyContent = "<a style='font-size:20px;' href='http://localhost/BaiTapLon/process/process-authentication.php/?email=$email&key_auth=$key_auth'>Click vào đây để xác nhận tài khoản $email của bạn</a>";
 
             if (sendEmail($email, $title, $bodyContent)) {
                 $response = array('status'=>'success','response' => 'Đã gửi link xác thực tài khoản về email của bạn.');
@@ -62,4 +59,3 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['fullnam
     echo json_encode($response);
 }
 mysqli_close($conn);
-?>

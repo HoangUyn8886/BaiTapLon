@@ -1,14 +1,11 @@
 <?php
-    //Nếu đăng nhập rồi thì chuyển hướng về trang home
     session_start();
-    if(isset($_SESSION['signinOK'])){
-        header('Location: ../home.php');
-    }
-    // Đăng nhập
-    require 'connectDB.php';
-    require '../send-email/sendEmail.php';
 
-    //Kiểm tra xem có Email và Password được gửi lên từ client không
+    // Đăng nhập
+    include './connectDB.php';
+    include '../send-email/sendEmail.php';
+
+    //Kiểm tra xem có email và password được gửi lên từ client không
     if(isset($_POST['email']) && isset($_POST['password'])){
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -46,14 +43,21 @@
                     if(isset($_SESSION['notify_signin'])){
                         unset($_SESSION['notify_signin']);
                     }
-                    $_SESSION['signinOK'] = $email;
+
+                    //tạo 2 biến session là id và họ tên
+                    $sql3 = "select user_id,fullname,avatar from user where email = '$email'";
+                    $result3 = mysqli_query($conn,$sql3);
+                    $row3 = mysqli_fetch_array($result3,MYSQLI_NUM);
+                    $_SESSION['user_id'] = $row3[0];
+                    $_SESSION['fullname'] = $row3[1];
+                    $_SESSION['avatar'] = $row3[2];
                     header('Location: ../home.php');
                 }
                 else{ // nếu status_auth = false thì gửi lại email bắt xác thực tài khoản
                     $title = '[Kích hoạt tài khoản]';
                     $bodyContent = "<a 
                     style='font-size:20px;'
-                    href = 'http://localhost:88/BaiTapLon_CNW/process/process-authentication.php/?email=$email&key_auth=$key_auth' >
+                    href = 'http://localhost/BaiTapLon/process/process-authentication.php/?email=$email&key_auth=$key_auth' >
                     Click vào đây để xác nhận tài khoản $email của bạn</a>";
 
                     sendEmail($email,$title,$bodyContent);
@@ -74,6 +78,5 @@
 
         }
         mysqli_close($conn);
-        
     }
 ?>

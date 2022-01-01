@@ -20,21 +20,20 @@
         // status_auth = true thi user co the dang nhap tai khoan
         if(password_verify($key_db,$key_url)){
             $status_auth = '1';
-            
             // 2 key verify thành công thì update lại status_auth = true 
             $sql2 = "UPDATE user SET status_auth =  $status_auth WHERE email = '$email'";
             $result2 = mysqli_query($conn,$sql2);
             if($result2){
                 $_SESSION['notify_signin'] = 'Kích hoạt thành công, mời bạn đăng nhập.';
                 //Điều hướng người dùng từ email về trang đăng nhập
-                header('Location: http://localhost:88/BaiTapLon_CNW');
+                
+                header('Location: http://localhost/BaiTapLon');
             }
             else{
                 echo'Kich hoạt không thành công';
             }
         }
         else{
-            
             echo'Kich hoạt không thành công';
         }
         mysqli_close($conn);

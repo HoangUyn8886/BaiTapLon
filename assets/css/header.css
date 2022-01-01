@@ -9,6 +9,7 @@ body{
     box-shadow: 1px 5px rgba(0, 0, 0, 0.01);
     top: 0;
     display: flex;
+    z-index: 99;
 }
 .box1,.box2,.box3{
     top: 0;
@@ -103,6 +104,12 @@ body{
     margin-left: 7px;
     text-decoration: none;
     font-size: 14px;
+}
+.text_signout_header{
+    color: #050505;
+}
+.text_signout_header:hover{
+    color: #1881f4;
 }
 @media (max-width:800px){
     .box3_signout{

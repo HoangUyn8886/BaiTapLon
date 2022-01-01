@@ -5,7 +5,7 @@ require 'Exception.php';
 require 'PHPMailer.php';
 require 'SMTP.php';
 function sendEmail($email , $tieude , $bodyContent) {
-// Khởi tạo và chuyển `true` cho phép các trường hợp ngoại lệ
+// Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
 try {
@@ -13,10 +13,10 @@ try {
     $mail->SMTPDebug = 0;// Enable verbose debug output
     $mail->isSMTP();// gửi mail SMTP
     $mail->Host = 'smtp.gmail.com';// Set the SMTP server to send through
-    $mail->SMTPAuth = true;//Bật xác thực SMTP
+    $mail->SMTPAuth = true;// Enable SMTP authentication
     $mail->Username = 'hoanguyen862001@gmail.com';// SMTP username
-    $mail->Password = 'iycfatgdwgxnzjlh'; // SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;// Bật mã hóa TLS; `PHPMailer :: ENCRYPTION_SMTPS` cũng được chấp nhận
+    $mail->Password = 'tjmlescfrtrhpcvb'; // SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;// Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port = 587; // TCP port to connect to
     $mail->CharSet = 'UTF-8';
     //Recipients
@@ -35,7 +35,7 @@ try {
             // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();
-            // Xóa tất cả địa chỉ và tệp đính kèm cho vòng lặp tiếp theo
+            // Clear all addresses and attachments for next loop
             $mail->clearAddresses();
             $mail->clearAttachments();
             return true;

@@ -16,7 +16,6 @@
             <img src="./assets/img/fb_logo.svg" alt="logo" srcset="">
         </a>
     </div>
-    
     <div class="box3">
         <a class="box3_user" href='./user.php'>
             <img <?php echo "src='$avatar'"; ?> alt="">
@@ -31,7 +30,7 @@
 
             <div class="menu_mb_tab">
                 <a href="./search.php">Tìm bạn</a>
-                <a href="./friendly.php">Những người hay tương tác</a>
+                <a href="./chat.php">Chat</a>
                 <a href="./change-password.php">Đổi mật khẩu</a>
                 <a href="./process/process-signout.php">Đăng xuất</a>
             </div>

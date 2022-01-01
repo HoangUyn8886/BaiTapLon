@@ -7,7 +7,6 @@ const birthday = document.querySelector('#birthday');
 const radio_male = document.querySelector('#radio_male');
 const radio_female = document.querySelector('#radio_female');
 const toast = document.querySelector('#toast');
-const modal = document.querySelector('#modal');
 const submit_signup = document.querySelector('submit_signup');
 const blocked = document.querySelector('#blocked');
 
@@ -17,7 +16,7 @@ form_signup.onsubmit = (e) => {
     // khi form đang gửi thì bật thẻ blocked để ngăn người dùng ấn phần tử khác
     blocked.style.display = 'block';
     let sex = '0';
-    //nếu check radio = nam thì sex=1 , nữ thì sex=0
+    //nếu check radio nam thì sex=1 , nữ thì sex=0
     if (radio_male.checked == true) {
         sex = '1';
     }
@@ -36,7 +35,7 @@ form_signup.onsubmit = (e) => {
     // kiểm tra người dùng nhập đủ dữ liệu chưa
     // nếu đã nhập đủ, sẽ dùng fetch để gửi
     if (fullname.value && email.value && password.value && birthday.value && (radio_male.checked==true || radio_female.checked==true)) {
-        fetch('http://localhost:88/BaiTapLon_CNW/process/process-signup.php', {
+        fetch('http://localhost/BaiTapLon/process/process-signup.php', {
             method: 'POST',
             body: formData
         }).then(res => res.json())
