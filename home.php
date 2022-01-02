@@ -78,7 +78,7 @@ $fullname = $row_myself[3];
                     <div class="header_post">
                         <img <?php echo "src='$row_user[1]'"; ?> alt="avatar">
                         <div class="name_and_time">
-                            <a <?php echo "href='./user.php?user_id=$row_user[0]'"; ?> class="fullname"><?php echo $row_user[0]; ?></a>
+                            <a <?php echo "href='./user.php?user_id=$row_post[0]'"; ?> class="fullname"><?php echo $row_user[0]; ?></a>
                             <div class="createAt"><?php echo $row_post[4] ?></div>
                         </div>
                     </div>
