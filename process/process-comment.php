@@ -13,7 +13,7 @@ if(mysqli_query($conn,$sql_add_comment)==true){
     echo json_encode("success");
 }
 else{
- 
+    echo json_encode("error");
 }
 
 mysqli_close($conn);
