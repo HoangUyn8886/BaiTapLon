@@ -61,7 +61,7 @@ $fullname = $row_myself[3];
 
             <?php
 
-            $sql_get_all = 'select * from post';
+            $sql_get_all = 'select * from post LEFT JOIN user on user.user_id=post.post_id order by post_id DESC';
             $result1 = mysqli_query($conn, $sql_get_all);
             while ($row_post = mysqli_fetch_array($result1, MYSQLI_NUM)) {
 
