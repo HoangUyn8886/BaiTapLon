@@ -12,7 +12,7 @@ $title = $_POST['text_content_post'];
 $image = $_FILES['content_image'];
 $user_id = $_SESSION['user_id'];
 
-echo "insert into post (title,image,user_id) values ('$title',".$image['name'].",'$user_id')";
+
 
 //up lên database , chuyển hướng về home
 if (isset($title) && isset($image)) {
